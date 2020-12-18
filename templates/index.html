@@ -3,14 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Todo App</title>
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
 
 </head>
 <body>
 	<h1>Todo List</h1>
 	<div>Add a new todo item:
 		<form action="{{ url_for('index') }}" method="POST">
-			<input type="text" name="todoitem">
+			<input type="text" name="note_text">
+      <input type = "text" name = "item_category">
 			<input type="submit" value="Add Item" class="button">
 		</form>
 	</div>
@@ -19,8 +20,8 @@
     {%for r in result%}
     <p>{{ r.note_text }}</p>
 		<p>{{ r.timestamp }}</p><br>
-    {%endfor%}
-
+    <p>{{r.category}}</p><br>
+		{%endfor%}
   </div>
 </body>
 </html>
