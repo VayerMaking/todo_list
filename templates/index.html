@@ -17,7 +17,8 @@
   <div>
     <h1>items in todo list</h1>
     {%for r in result%}
-    <p>{{ r.note_text }}</p><br>
+    <p>{{ r.note_text }}</p>
+		<p>{{ r.timestamp }}</p><br>
     {%endfor%}
 
   </div>
